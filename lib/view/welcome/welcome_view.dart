@@ -7,7 +7,7 @@ import '../../core/constants/language/language_constants.dart';
 import '../../core/init/lang/locale_keys.g.dart';
 import '../../core/resources/resources.dart';
 import '../../core/view/components/adaptive_text.dart';
-import '_product/components/buttons/input_field.dart';
+import '_product/components/buttons/welcome_button.dart';
 
 class WelcomeView extends StatefulWidget {
   const WelcomeView({super.key});
