@@ -1,0 +1,1 @@
+dart run spider build
