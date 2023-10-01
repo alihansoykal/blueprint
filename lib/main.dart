@@ -1,5 +1,5 @@
 import 'package:blueprint/core/constants/app/app_constants.dart';
-import 'package:blueprint/view/login/login_view.dart';
+import 'package:blueprint/view/welcome/welcome_view.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      home: const LoginView(),
+      home: const WelcomeView(),
     );
   }
 }
