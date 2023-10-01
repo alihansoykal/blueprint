@@ -13,4 +13,5 @@ class LanguageConstants {
       ];
 
   Locale get enLocale => const Locale('en', 'US');
+  Locale get deLocale => const Locale('de', 'DE');
 }
