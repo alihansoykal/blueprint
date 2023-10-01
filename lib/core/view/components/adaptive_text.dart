@@ -4,10 +4,15 @@ import 'package:flutter/material.dart';
 
 final class AdaptiveText extends StatelessWidget {
   final String text;
-  const AdaptiveText({super.key, required this.text});
+  final TextStyle? style;
+  const AdaptiveText({super.key, required this.text, this.style});
 
   @override
   Widget build(BuildContext context) {
-    return AutoSizeText(text.locale);
+    return AutoSizeText(
+      text.locale,
+      style: style,
+      textAlign: TextAlign.center,
+    );
   }
 }
