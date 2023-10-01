@@ -1,5 +1,7 @@
 {
     "appName": "Blueprint",
+    "welcome": "Welcome",
+    "welcomeBack": "Welcoma back",
     "loginTitle": "Login",
     "loginSubtitle": "Please login to continue",
     "loginUsername": "Email or Username",

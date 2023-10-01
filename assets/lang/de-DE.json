@@ -1,5 +1,7 @@
 {
     "appName": "Meine Anwendung",
+    "welcome": "Willkommen",
+    "welcomeBack": "Willkommen zurück",
     "loginTitle": "Anmelden",
     "loginSubtitle": "Bitte melden Sie sich an, um fortzufahren",
     "loginUsername": "E-Mail oder Benutzername",
