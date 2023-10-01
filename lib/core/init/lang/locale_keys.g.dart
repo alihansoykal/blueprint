@@ -2,6 +2,8 @@
 
 abstract class  LocaleKeys {
   static const appName = 'appName';
+  static const welcome = 'welcome';
+  static const welcomeBack = 'welcomeBack';
   static const loginTitle = 'loginTitle';
   static const loginSubtitle = 'loginSubtitle';
   static const loginUsername = 'loginUsername';
