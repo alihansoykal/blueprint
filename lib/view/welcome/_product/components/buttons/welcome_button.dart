@@ -1,4 +1,5 @@
 import 'package:blueprint/core/extensions/context_extension.dart';
+import 'package:blueprint/core/init/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 Widget buildButton(String buttonText, Color color, BuildContext context) {
@@ -15,10 +16,7 @@ Widget buildButton(String buttonText, Color color, BuildContext context) {
       onPressed: () {},
       child: Text(
         buttonText,
-        style: const TextStyle(
-          color: Colors.white,
-          fontSize: 16,
-        ),
+        style: context.appTheme.text,
         textAlign: TextAlign.center,
       ),
     ),
