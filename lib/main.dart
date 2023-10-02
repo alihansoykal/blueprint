@@ -6,8 +6,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'core/constants/app/app_constants.dart';
 import 'core/constants/language/language_constants.dart';
+import 'core/init/theme/app_theme.dart';
 import 'core/init/theme/color_schemes.g.dart';
-import 'core/init/theme/themes.dart';
 import 'core/providers/providers.dart';
 
 void main() async {
@@ -34,10 +34,10 @@ class MyApp extends ConsumerWidget {
             themeMode == ThemeMode.light ? lightColorScheme : darkColorScheme,
         textTheme: textTheme,
         extensions:
-            themeMode == ThemeMode.light ? [Themes.light] : [Themes.dark],
+            themeMode == ThemeMode.light ? [AppTheme.light] : [AppTheme.dark],
         scaffoldBackgroundColor: themeMode == ThemeMode.light
-            ? Themes.light.background
-            : Themes.dark.background,
+            ? AppTheme.light.background
+            : AppTheme.dark.background,
       ),
       themeMode: themeMode,
       localizationsDelegates: context.localizationDelegates,
