@@ -1,56 +1,60 @@
 import 'package:blueprint/core/extensions/context_extension.dart';
 import 'package:blueprint/core/extensions/string_localization.dart';
+import 'package:blueprint/core/init/theme/app_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/constants/language/language_constants.dart';
 import '../../core/init/lang/locale_keys.g.dart';
+import '../../core/providers/providers.dart';
 import '../../core/resources/resources.dart';
 import '../../core/view/components/adaptive_text.dart';
 import '_product/components/buttons/welcome_button.dart';
 
-class WelcomeView extends StatefulWidget {
+class WelcomeView extends ConsumerWidget {
   const WelcomeView({super.key});
 
   @override
-  State<WelcomeView> createState() => _WelcomeViewState();
-}
-
-class _WelcomeViewState extends State<WelcomeView> {
-  Locale _selectedLocale = LanguageConstants.instance.enLocale;
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final customTheme = context.appTheme;
     return Scaffold(
       body: SafeArea(
         child: Center(
           child: Column(
             children: [
-              Align(
-                alignment: Alignment.topRight,
-                child: Padding(
-                  padding: const EdgeInsets.only(right: 32.0),
-                  child: DropdownButton<Locale>(
-                    value: _selectedLocale,
-                    items: [
-                      DropdownMenuItem(
-                        value: LanguageConstants.instance.enLocale,
-                        child: const Text("English"),
-                      ),
-                      DropdownMenuItem(
-                        value: LanguageConstants.instance.deLocale,
-                        child: const Text("German"),
-                      ),
-                    ],
-                    onChanged: (value) {
-                      if (value != null) {
-                        context.setLocale(value);
-                        setState(() {
-                          _selectedLocale = value;
-                        });
-                      }
-                    },
-                  ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    IconButton(
+                      icon: const Icon(Icons.light_mode),
+                      onPressed: () {
+                        final themeNotifier =
+                            ref.read(themeModeProvider.notifier);
+                        themeNotifier.toggleTheme();
+                      },
+                    ),
+                    DropdownButton<Locale>(
+                      value: context.locale,
+                      items: [
+                        DropdownMenuItem(
+                          value: LanguageConstants.instance.enLocale,
+                          child: const Text("English"),
+                        ),
+                        DropdownMenuItem(
+                          value: LanguageConstants.instance.deLocale,
+                          child: const Text("German"),
+                        ),
+                      ],
+                      onChanged: (value) {
+                        if (value != null) {
+                          context.setLocale(value);
+                        }
+                      },
+                    ),
+                  ],
                 ),
               ),
               const Image(
@@ -72,10 +76,10 @@ class _WelcomeViewState extends State<WelcomeView> {
                   style: TextStyle(color: Colors.grey[700], fontSize: 20)),
               const SizedBox(height: 40),
               buildButton(LocaleKeys.welcome_login.locale.locale,
-                  const Color(0xFF144272), context),
+                  customTheme.button, context),
               const SizedBox(height: 20.0),
               buildButton(LocaleKeys.welcome_register.locale,
-                  const Color(0xFF205295), context),
+                  customTheme.button, context),
             ],
           ),
         ),
