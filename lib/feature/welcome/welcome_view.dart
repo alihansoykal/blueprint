@@ -4,11 +4,12 @@ import 'package:blueprint/core/init/theme/app_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/svg.dart';
 
+import '../../app/resources/resources.dart';
 import '../../core/constants/language/language_constants.dart';
 import '../../core/init/lang/locale_keys.g.dart';
 import '../../core/providers/providers.dart';
-import '../../core/resources/resources.dart';
 import '../../core/view/components/adaptive_text.dart';
 import '_product/components/buttons/welcome_button.dart';
 
@@ -57,10 +58,8 @@ class WelcomeView extends ConsumerWidget {
                   ],
                 ),
               ),
-              const Image(
-                image: AssetImage(
-                  Images.blueprintLogoTransparent,
-                ),
+              SvgPicture.asset(
+                Svgs.blueprintLogo,
                 height: 300,
               ),
               SizedBox(
