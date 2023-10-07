@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:blueprint/core/resources/resources.dart';
+import 'package:blueprint/app/resources/resources.dart';
 
 void main() {
   test('images assets test', () {
