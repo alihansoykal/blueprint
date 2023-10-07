@@ -5,6 +5,7 @@
         "subtitle": "Streamlined templates for effortless mobile app development.",
         "description": "Create with Ease!",
         "login": "Login",
-        "register": "Register"
+        "register": "Register",
+        "skip": "Skip"
     }
 }
