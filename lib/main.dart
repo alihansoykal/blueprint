@@ -1,13 +1,11 @@
-import 'package:blueprint/core/init/theme/typography.dart';
-import 'package:blueprint/view/welcome/welcome_view.dart';
+import 'package:blueprint/core/init/theme/theme_data.dart';
+import 'package:blueprint/feature/welcome/welcome_view.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'core/constants/app/app_constants.dart';
+import 'app/app_constants.dart';
 import 'core/constants/language/language_constants.dart';
-import 'core/init/theme/app_theme.dart';
-import 'core/init/theme/color_schemes.g.dart';
 import 'core/providers/providers.dart';
 
 void main() async {
@@ -28,17 +26,7 @@ class MyApp extends ConsumerWidget {
     final themeMode = ref.watch(themeModeProvider);
 
     return MaterialApp(
-      theme: ThemeData(
-        useMaterial3: true,
-        colorScheme:
-            themeMode == ThemeMode.light ? lightColorScheme : darkColorScheme,
-        textTheme: textTheme,
-        extensions:
-            themeMode == ThemeMode.light ? [AppTheme.light] : [AppTheme.dark],
-        scaffoldBackgroundColor: themeMode == ThemeMode.light
-            ? AppTheme.light.background
-            : AppTheme.dark.background,
-      ),
+      theme: themeData(themeMode),
       themeMode: themeMode,
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
