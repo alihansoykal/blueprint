@@ -1,41 +1,163 @@
 import 'package:flutter/material.dart';
 
-extension ContextExtension on BuildContext {
-  MediaQueryData get mediaQuery => MediaQuery.of(this);
-}
-
 extension MediaQueryExtension on BuildContext {
-  double get height => mediaQuery.size.height;
-  double get width => mediaQuery.size.width;
+  MediaQueryData get mediaQuery => MediaQuery.of(this);
 
+  /// Returns the height of the device
+  double get height => MediaQuery.sizeOf(this).height;
+
+  /// Returns the width of the device
+  double get width => MediaQuery.sizeOf(this).width;
+
+  /// Returns 1% of the screen height
   double get lowValue => height * 0.01;
-  double get normalValue => height * 0.02;
-  double get mediumValue => height * 0.04;
-  double get highValue => height * 0.1;
+
+  /// Default value is 2% of the screen height
+  double get defaultValue => height * 0.02;
+
+  /// Returns 5% of the screen height
+  double get highValue => height * 0.05;
+
+  /// Returns 10% of the screen height
+  double get veryHighValue1x => height * 0.1;
+
+  /// Returns 20% of the screen height
+  double get veryHighValue2x => height * 0.2;
+
+  /// Returns 30% of the screen height
+  double get veryHighValue3x => height * 0.3;
+
+  /// Returns 40% of the screen height
+  double get veryHighValue4x => height * 0.4;
+
+  /// Returns 50% of the screen height
+  double get veryHighValue5x => height * 0.5;
+
+  double dynamicWidth(double val) => width * val;
+  double dynamicHeight(double val) => height * val;
 }
 
-extension PaddingExtensionAll on BuildContext {
-  EdgeInsets get paddingLow => EdgeInsets.all(lowValue);
-  EdgeInsets get paddingNormal => EdgeInsets.all(normalValue);
-  EdgeInsets get paddingMedium => EdgeInsets.all(mediumValue);
-  EdgeInsets get paddingHigh => EdgeInsets.all(highValue);
-}
+extension PaddingExtension on BuildContext {
+  /// Adds 1% padding from all sides.
+  EdgeInsets get paddingAllLow => EdgeInsets.all(lowValue);
 
-extension PaddingExtensionSymetric on BuildContext {
-  EdgeInsets get paddingLowVertical => EdgeInsets.symmetric(vertical: lowValue);
-  EdgeInsets get paddingNormalVertical =>
-      EdgeInsets.symmetric(vertical: normalValue);
-  EdgeInsets get paddingMediumVertical =>
-      EdgeInsets.symmetric(vertical: mediumValue);
-  EdgeInsets get paddingHighVertical =>
+  /// Adds 2% padding from all sides.
+  /// Use this when you want to add padding from all sides.
+  EdgeInsets get paddingAllDefault => EdgeInsets.all(defaultValue);
+
+  /// Adds 5% padding from all sides.
+  EdgeInsets get paddingAllHigh => EdgeInsets.all(highValue);
+
+  /// Adds 1% padding horizontally.
+  EdgeInsets get paddingHorizontalLow =>
+      EdgeInsets.symmetric(horizontal: lowValue);
+
+  /// Adds 2% padding horizontally.
+  /// Use this when you want to add padding horizontally.
+  EdgeInsets get paddingHorizontalDefault =>
+      EdgeInsets.symmetric(horizontal: defaultValue);
+
+  /// Adds 5% padding horizontally.
+  EdgeInsets get paddingHorizontalHigh =>
+      EdgeInsets.symmetric(horizontal: highValue);
+
+  /// Adds 1% padding vertically.
+  EdgeInsets get paddingVerticalLow => EdgeInsets.symmetric(vertical: lowValue);
+
+  /// Adds 2% padding vertically.
+  /// Use this when you want to add padding vertically.
+  EdgeInsets get paddingVerticalDefault =>
+      EdgeInsets.symmetric(vertical: defaultValue);
+
+  /// Adds 5% padding vertically.
+  EdgeInsets get paddingVerticalHigh =>
       EdgeInsets.symmetric(vertical: highValue);
 
-  EdgeInsets get paddingLowHorizontal =>
-      EdgeInsets.symmetric(horizontal: lowValue);
-  EdgeInsets get paddingNormalHorizontal =>
-      EdgeInsets.symmetric(horizontal: normalValue);
-  EdgeInsets get paddingMediumHorizontal =>
-      EdgeInsets.symmetric(horizontal: mediumValue);
-  EdgeInsets get paddingHighHorizontal =>
-      EdgeInsets.symmetric(horizontal: highValue);
+  /// Adds 1% padding from right.
+  EdgeInsets get paddingRightLow => EdgeInsets.only(right: lowValue);
+
+  /// Adds 2% padding from right.
+  /// Use this when you want to add padding from right.
+  EdgeInsets get paddingRightDefault => EdgeInsets.only(right: defaultValue);
+
+  /// Adds 5% padding from right.
+  EdgeInsets get paddingRightHigh => EdgeInsets.only(right: highValue);
+
+  /// Adds 1% padding from left.
+  EdgeInsets get paddingLeftLow => EdgeInsets.only(left: lowValue);
+
+  /// Adds 2% padding from left.
+  /// Use this when you want to add padding from left.
+  EdgeInsets get paddingLeftDefault => EdgeInsets.only(left: defaultValue);
+
+  /// Adds 5% padding from left.
+  EdgeInsets get paddingLeftHigh => EdgeInsets.only(left: highValue);
+
+  /// Adds 1% padding from top.
+  EdgeInsets get paddingTopLow => EdgeInsets.only(top: lowValue);
+
+  /// Adds 2% padding from top.
+  /// Use this when you want to add padding from top.
+  EdgeInsets get paddingTopDefault => EdgeInsets.only(top: defaultValue);
+
+  /// Adds 5% padding from top.
+  EdgeInsets get paddingTopHigh => EdgeInsets.only(top: highValue);
+
+  /// Adds 1% padding from bottom.
+  EdgeInsets get paddingBottomLow => EdgeInsets.only(bottom: lowValue);
+
+  /// Adds 2% padding from bottom.
+  /// Use this when you want to add padding from bottom.
+  EdgeInsets get paddingBottomDefault => EdgeInsets.only(bottom: defaultValue);
+
+  /// Adds 5% padding from bottom.
+  EdgeInsets get paddingBottomHigh => EdgeInsets.only(bottom: highValue);
+}
+
+extension ThemeExtension on BuildContext {
+  /// Get the theme data
+  ThemeData get theme => Theme.of(this);
+
+  /// Get the text theme
+  TextTheme get textTheme => Theme.of(this).textTheme;
+
+  /// Get the brightness
+  Brightness get brightness => Theme.of(this).brightness;
+}
+
+extension DurationExtension on BuildContext {
+  /// Duration of 250 milliseconds
+  Duration get durationLow => const Duration(milliseconds: 250);
+
+  /// Duration of 500 milliseconds
+  Duration get durationDefault => const Duration(milliseconds: 500);
+
+  /// Duration of 1000 milliseconds
+  Duration get durationHigh => const Duration(milliseconds: 1000);
+
+  /// Duration of 2000 milliseconds
+  Duration get durationVeryHigh => const Duration(milliseconds: 2000);
+}
+
+extension SpaceExtension on BuildContext {
+  /// Adds 1% space vertically.
+  SizedBox get lowVerticalSpace => SizedBox(height: lowValue);
+
+  /// Adds 2% space vertically.
+  SizedBox get defaultVerticalSpace => SizedBox(height: defaultValue);
+
+  /// Adds 5% space vertically.
+  SizedBox get highVerticalSpace => SizedBox(height: highValue);
+
+  /// Adds 1% space horizontally.
+  SizedBox get veryHighVerticalSpace1x => SizedBox(height: veryHighValue1x);
+
+  /// Adds 2% space horizontally.
+  SizedBox get veryHighVerticalSpace2x => SizedBox(height: veryHighValue2x);
+
+  /// Adds 3% space horizontally.
+  SizedBox get veryHighVerticalSpace3x => SizedBox(height: veryHighValue3x);
+
+  /// Adds 4% space horizontally.
+  SizedBox get veryHighVerticalSpace4x => SizedBox(height: veryHighValue4x);
 }
