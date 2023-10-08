@@ -1,8 +1,9 @@
-import 'package:blueprint/core/extensions/context_extension.dart';
-import 'package:blueprint/core/init/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
-Widget buildButton(String buttonText, Color color, BuildContext context) {
+import '../../extensions/context_extension.dart';
+import '../../init/theme/app_theme.dart';
+
+Widget roundedButton(String buttonText, Color color, BuildContext context) {
   return SizedBox(
     width: context.width * 0.9,
     child: ElevatedButton(
