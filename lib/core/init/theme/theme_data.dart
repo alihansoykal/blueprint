@@ -1,8 +1,8 @@
-import 'package:blueprint/core/init/theme/typography.dart';
 import 'package:flutter/material.dart';
 
 import 'app_theme.dart';
 import 'color_schemes.g.dart';
+import 'typography.dart';
 
 ThemeData themeData(ThemeMode themeMode) {
   return ThemeData(

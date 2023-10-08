@@ -8,7 +8,7 @@ part of 'app_theme.dart';
 // TailorAnnotationsGenerator
 // **************************************************************************
 
-class AppTheme extends ThemeExtension<AppTheme> {
+class AppTheme extends ThemeExtension<AppTheme> with DiagnosticableTreeMixin {
   const AppTheme({
     required this.background,
     required this.button,
@@ -73,6 +73,16 @@ class AppTheme extends ThemeExtension<AppTheme> {
       button: Color.lerp(button, other.button, t)!,
       text: TextStyle.lerp(text, other.text, t)!,
     );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AppTheme'))
+      ..add(DiagnosticsProperty('background', background))
+      ..add(DiagnosticsProperty('button', button))
+      ..add(DiagnosticsProperty('text', text));
   }
 
   @override
