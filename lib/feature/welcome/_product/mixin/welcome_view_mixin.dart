@@ -18,7 +18,7 @@ mixin WelcomeViewMixin {
   }
 
   Widget registerButton(BuildContext context) {
-    return roundedButton(LocaleKeys.welcome_login.locale.locale,
+    return roundedButton(LocaleKeys.welcome_register.locale.locale,
         context.appTheme.button, context);
   }
 
