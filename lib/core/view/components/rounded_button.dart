@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../feature/login/login_view.dart';
 import '../../extensions/context_extension.dart';
 import '../../init/theme/app_theme.dart';
 
@@ -14,7 +15,12 @@ Widget roundedButton(String buttonText, Color color, BuildContext context) {
           borderRadius: BorderRadius.circular(30.0),
         ),
       ),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const LoginView()),
+        );
+      },
       child: Text(
         buttonText,
         style: context.appTheme.text,
