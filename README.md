@@ -19,9 +19,9 @@ sh scripts/assets/generate_assets.sh
 ```  
 
 ### Built With
-* [![Dart][Dart.dev]][Dart-url]
-* [![Flutter][Flutter.dev]][Flutter-url]
-* [![Firebase][Firebase.dev]][Firebase-url]
+[![Dart][Dart.dev]][Dart-url]
+[![Flutter][Flutter.dev]][Flutter-url]
+[![Firebase][Firebase.dev]][Firebase-url]
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
