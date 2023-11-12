@@ -13,13 +13,11 @@ import '../components/buttons/theme_switcher.dart';
 
 mixin WelcomeViewMixin {
   Widget loginButton(BuildContext context) {
-    return roundedButton(LocaleKeys.welcome_login.locale.locale,
-        context.appTheme.button, context);
+    return roundedButton(LocaleKeys.welcome_login.locale.locale, context.appTheme.button, context);
   }
 
   Widget registerButton(BuildContext context) {
-    return roundedButton(LocaleKeys.welcome_register.locale.locale,
-        context.appTheme.button, context);
+    return roundedButton(LocaleKeys.welcome_register.locale.locale, context.appTheme.button, context);
   }
 
   Widget svgLogo(BuildContext context) {
@@ -41,7 +39,7 @@ mixin WelcomeViewMixin {
 
   Widget get description => AdaptiveText(
         text: LocaleKeys.welcome_description.locale,
-        style: TextStyle(color: Colors.grey[700], fontSize: 20),
+        style: TextStyle(color: Colors.grey[900], fontSize: 20),
       );
 
   Widget themeAndLocaleHeader(BuildContext context) {
