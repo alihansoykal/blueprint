@@ -26,7 +26,7 @@ final class LoginView extends StatelessWidget with LoginViewMixin {
                   emailField,
                   passwordField,
                   forgotPassword(context),
-                  alternativeLoginButtons,
+                  alternativeLogin,
                   verticalSpacer(context, 0.06),
                   loginButton,
                   dontHaveAnAccount(context),
