@@ -18,7 +18,7 @@ Widget roundedButton(String buttonText, Color color, BuildContext context) {
       onPressed: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const LoginView()),
+          MaterialPageRoute(builder: (context) => LoginView()),
         );
       },
       child: Text(
