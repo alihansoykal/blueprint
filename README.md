@@ -19,10 +19,10 @@ sh scripts/assets/generate_assets.sh
 ```  
 
 ### Built With
+
 [![Dart][Dart.dev]][Dart-url]
 [![Flutter][Flutter.dev]][Flutter-url]
 [![Firebase][Firebase.dev]][Firebase-url]
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [Dart.dev]: https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white
