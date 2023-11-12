@@ -1,19 +1,18 @@
+import 'package:blueprint/app/resources/colors.dart';
 import 'package:flutter/material.dart';
 
-class CurvePainter extends CustomPainter {
+class LoginViewCurvePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Path path = Path();
     Paint paint = Paint();
-    Color colorTwo = const Color.fromARGB(255, 130, 206, 215);
-    Color colorOne = const Color(0xFF3EC1D3);
+    Color colorTwo = AppColors.secondaryColor;
+    Color colorOne = AppColors.primaryColor;
 
     path = Path();
-    path.lineTo(0, size.height * 0.50);
-    path.quadraticBezierTo(size.width * 0.30, size.height * 0.60,
-        size.width * 0.6, size.height * 0.50);
-    path.quadraticBezierTo(
-        size.width * 0.9, size.height * 0.4, size.width * 1, size.height * 0.5);
+    path.lineTo(0, size.height * 0.25);
+    path.quadraticBezierTo(size.width * 0.30, size.height * 0.30, size.width * 0.6, size.height * 0.25);
+    path.quadraticBezierTo(size.width * 0.9, size.height * 0.20, size.width, size.height * 0.25);
     path.lineTo(size.width, 0);
     path.close();
 
@@ -21,17 +20,26 @@ class CurvePainter extends CustomPainter {
     canvas.drawPath(path, paint);
 
     path = Path();
-    path.lineTo(0, size.height * 0.4);
-    path.quadraticBezierTo(size.width * 0.20, size.height * 0.4,
-        size.width * 0.4, size.height * 0.30);
-    path.quadraticBezierTo(
-        size.width * 0.8, size.height * 0.1, size.width * 1, size.height * 0.3);
+    path.lineTo(0, size.height * 0.2);
+    path.quadraticBezierTo(size.width * 0.20, size.height * 0.2, size.width * 0.4, size.height * 0.15);
+    path.quadraticBezierTo(size.width * 0.8, size.height * 0.05, size.width * 1, size.height * 0.15);
 
     path.lineTo(size.width, 0);
     path.close();
 
     paint.color = colorOne;
     canvas.drawPath(path, paint);
+
+    // path = Path();
+    // path.moveTo(0, size.height);
+    // path.lineTo(0, size.height * 0.90);
+    // path.quadraticBezierTo(size.width * 0.25, size.height * 0.95, size.width * 0.5, size.height * 0.90);
+    // path.quadraticBezierTo(size.width * 0.75, size.height * 0.85, size.width, size.height * 0.82);
+    // path.lineTo(size.width, size.height);
+    // path.close();
+
+    // paint.color = colorOne;
+    // canvas.drawPath(path, paint);
   }
 
   @override
