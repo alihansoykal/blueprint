@@ -7,5 +7,17 @@
         "login": "Login",
         "register": "Register",
         "skip": "Skip"
+    },
+    "login": {
+        "title": "Welcome back",
+        "email": "Email",
+        "emailHint": "johndoe@gmail.com",
+        "password": "Password",
+        "passwordHint": "Enter your password",
+        "login": "Login",
+        "forgotPassword": "Forgot Password",
+        "register": "Register",
+        "noAccount": "Don't have an account? ",
+        "signUp": "Sign Up"
     }
 }
