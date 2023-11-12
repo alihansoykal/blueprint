@@ -2,6 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:theme_tailor_annotation/theme_tailor_annotation.dart';
 
+import '../../../app/resources/colors.dart';
+
 part 'app_theme.tailor.dart';
 
 @Tailor(
@@ -11,17 +13,17 @@ part 'app_theme.tailor.dart';
 )
 class _$AppTheme {
   static const List<Color> background = [
-    Color(0xffF1B4BB),
-    Color(0xFF232323),
+    AppColors.tertiaryColor,
+    AppColors.primaryColor,
   ];
 
   static const List<Color> button = [
-    Color(0xFF0E2954),
+    AppColors.primaryColor,
     Color(0xFFFDF0F0),
   ];
 
   static List<TextStyle> text = [
     const TextStyle(color: Colors.white, fontSize: 18),
-    const TextStyle(color: Color(0xFF464646), fontSize: 18),
+    const TextStyle(color: AppColors.quaternaryColor, fontSize: 18),
   ];
 }
