@@ -6,5 +6,7 @@ import 'package:blueprint/app/resources/resources.dart';
 void main() {
   test('svgs assets test', () {
     expect(File(Svgs.blueprintLogo).existsSync(), true);
+    expect(File(Svgs.facebookIcon).existsSync(), true);
+    expect(File(Svgs.googleIcon).existsSync(), true);
   });
 }
